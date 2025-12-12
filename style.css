@@ -2,6 +2,8 @@
 
 :root{
     --orange-color: #D0A452;
+    --desktop-screen-size-min: 1200px;
+    --pad-screen-size-min: 600px;
 }
 
 .material-symbols-outlined {
@@ -125,7 +127,12 @@ main{
     position: absolute;
     z-index: 1;
     left: 20%;
-    top: 5%
+    top: 5%;
+    animation-name: banner_animation;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+}
+.banner:hover{
 }
 .banner>img{
     height: 100px;
@@ -207,4 +214,29 @@ form{
     margin: 20px 0px 0px 0px;
     flex-grow: 1;
     text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .form_contacts{
+        display: none;
+    }
+}
+
+@keyframes banner_animation {
+    0%, 100%{
+        left: 20%;
+        top: 5%
+    }
+    25%{
+        left: 80%;
+        top: 5%
+    }
+    50%{
+        left: 80%;
+        top: 60%
+    }
+    75%{
+        left: 20%;
+        top: 60%;
+    }
 }
